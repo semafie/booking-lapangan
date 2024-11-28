@@ -45,7 +45,7 @@
             </g>
           </svg>
         </span>
-        <span class="app-brand-text demo menu-text fw-bold ms-2">Greenify</span>
+        <span class="app-brand-text demo menu-text fw-bold ms-2">Booking</span>
       </a>
 
       <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -67,13 +67,26 @@
       </li>
 
       <!-- Layouts -->
-      {{-- <li class="menu-item  @active('artikel')">
-        <a href="{{ route('artikel') }}" class="menu-link">
+      <li class="menu-item  @active('lapangan')">
+        <a href="{{ route('lapangan') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-book-heart"></i>
-          <div data-i18n="Layouts">Data artikel</div>
+          <div data-i18n="Layouts">Data Lapangan</div>
         </a>
       </li>
-      <li class="menu-item @active('routine')">
+      <li class="menu-item  @active('jadwal')">
+        <a href="{{ route('jadwal') }}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-book-heart"></i>
+          <div data-i18n="Layouts">Jadwal</div>
+        </a>
+      </li>
+      
+      <li class="menu-item  @active('transaksi')">
+        <a href="{{ route('transaksi') }}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-book-heart"></i>
+          <div data-i18n="Layouts">Transaksi</div>
+        </a>
+      </li>
+      {{-- <li class="menu-item @active('routine')">
         <a href="{{ route('routine') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-calendar"></i>
           <div data-i18n="Layouts">Data Routine</div>
