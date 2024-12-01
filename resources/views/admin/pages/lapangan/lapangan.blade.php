@@ -33,9 +33,12 @@
                         <td><img style="width: 170px;" src="/{{ $item->gambar }}" alt=""></td>
                         <td>{{ $item->status  }}</td>
                         <td class="">
+                            <a href="{{ route('jadwal', $item->id) }}">
+                            <button type="submit" class="btn btn-primary mb-3"
+                                >Detail Jadwal</button>
                             <div class="d-flex gap-3">
-                                <button type="submit" class="btn btn-warning" data-bs-toggle="modal"
-                                data-bs-target="#editlapangan{{ $item->id }}">Edit</button>
+                            </a>
+                                
                             <div class="d-flex gap-3">
                                 <button type="submit" class="btn btn-warning" data-bs-toggle="modal"
                                 data-bs-target="#editlapangan{{ $item->id }}">Edit</button>

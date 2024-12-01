@@ -73,17 +73,24 @@
           <div data-i18n="Layouts">Data Lapangan</div>
         </a>
       </li>
-      <li class="menu-item  @active('jadwal')">
-        <a href="{{ route('jadwal') }}" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-book-heart"></i>
-          <div data-i18n="Layouts">Jadwal</div>
-        </a>
-      </li>
+      
       
       <li class="menu-item  @active('transaksi')">
         <a href="{{ route('transaksi') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-book-heart"></i>
           <div data-i18n="Layouts">Transaksi</div>
+        </a>
+      </li>
+      <li class="menu-item  ">
+        <a href="" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-book-heart"></i>
+          <div data-i18n="Layouts">Laporan</div>
+        </a>
+      </li>
+      <li class="menu-item  ">
+        <a href="" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-book-heart"></i>
+          <div data-i18n="Layouts">Ulasan</div>
         </a>
       </li>
       {{-- <li class="menu-item @active('routine')">

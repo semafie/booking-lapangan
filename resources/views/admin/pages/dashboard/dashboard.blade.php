@@ -522,5 +522,24 @@
       </div>
       <!--/ Transactions -->
     </div>
-  </div>   
+  </div>
+  <script>
+    @if(Session::has('success_message'))
+
+    Swal.fire({
+      title: 'Berhasil',
+      text: 'Anda Berhasil Login',
+      icon: 'success',
+      confirmButtonText: 'Oke'
+    })
+    @elseif(Session::has('gagal_login'))
+
+    Swal.fire({
+      title: 'Gagal',
+      text: 'Masukkan email dan password dengan benar',
+      icon: 'error',
+      confirmButtonText: 'Oke'
+    })
+    @endif
+</script>   
 @endsection

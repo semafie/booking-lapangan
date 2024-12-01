@@ -9,6 +9,7 @@ class jadwalModel extends Model
     protected $table = 'jadwal';
 
     protected $fillable = [
+        'id_lapangan',
         'jam_mulai',
         'jam_selesai',
         'status',
@@ -16,6 +17,6 @@ class jadwalModel extends Model
 
     public function lapangan()
     {
-        return $this->belongsTo(lapanganModel::class, 'id_jadwal');
+        return $this->belongsTo(lapanganModel::class, 'id_lapangan', 'id');
     }
 }

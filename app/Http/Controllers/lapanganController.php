@@ -70,6 +70,7 @@ class lapanganController extends Controller
 
     public function edit(Request $request, $id)
     {
+        // dd($request);
         $lapangan = lapanganModel::findOrFail($id);
 
         $lapangan->nama = $request->input('nama');
