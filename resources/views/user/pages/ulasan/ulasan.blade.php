@@ -32,10 +32,17 @@
                     @csrf
                 <div class="modal-body">
                    
-                    <label for="defaultFormControlInput" class="form-label">Rating</label>
-                    <input class="form-control" type="time" name="jam_mulai" value="12:30:00" id="html5-time-input" />
+                    <label for="exampleFormControlSelect1" class="form-label">Rating</label>
+                    <select class="form-select" id="exampleFormControlSelect1" name="rating" aria-label="Default select example">
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                    </select>
                     <label for="defaultFormControlInput" class="form-label">Komentar</label>
-                    <input class="form-control" type="time" name="jam_selesai" value="12:30:00" id="html5-time-input" />
+                    <input class="form-control" type="hidden" name="user_id" value="{{ $user->id }}" id="html5-time-input" />
+                    <input class="form-control" type="text" name="komentar"id="html5-time-input" />
                     {{-- <input class="form-control" type="hidden" name="id_lapangan" value="{{ $id_lapangan }}" id="html5-time-input" /> --}}
                     
                 </div>

@@ -641,8 +641,8 @@
           </script>
           <div class="swiper-wrapper">
 
-            @if($ulasan && $ulasan->count() > 0)
-            @foreach ($ulasan as $item)
+            {{-- @if($ulasan && $ulasan->count() > 0)
+            @foreach ($ulasan as $item) --}}
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="row gy-4 justify-content-center">
@@ -666,10 +666,10 @@
                 </div>
               </div>
             </div><!-- End testimonial item -->
-            @endforeach
+            {{-- @endforeach
             @else
                 <h1 >Ulasan tidak ditemukan</h1>
-            @endif
+            @endif --}}
             
 
             {{-- <div class="swiper-slide">

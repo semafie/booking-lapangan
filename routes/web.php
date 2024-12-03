@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [Login_RegisterController::class, "show_landing"])->name("landing");
+Route::get('/halo', function () {
+    return view('halo');
+});
 Route::get('/login', [Login_RegisterController::class, "show_login"])->name("login");
 Route::get('/register', [Login_RegisterController::class, "show_register"])->name("register");
 Route::post('/registerakun', [Login_RegisterController::class, "register"])->name("registerakun");

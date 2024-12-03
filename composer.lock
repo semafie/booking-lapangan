@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12c473a3141f63bccc1d877435f7d9ae",
+    "content-hash": "309cb713c6d1e4a1f006135c5143f2ea",
     "packages": [
         {
             "name": "brick/math",
@@ -1167,6 +1167,56 @@
                 "source": "https://github.com/irsyadulibad/laravel-activehelper/tree/0.0.1"
             },
             "time": "2023-01-31T05:24:30+00:00"
+        },
+        {
+            "name": "irsyadulibad/nik-validator",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/irsyadulibad/nik-validator.git",
+                "reference": "caccd90608f4d9deedd71f34c727fab306df98a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/irsyadulibad/nik-validator/zipball/caccd90608f4d9deedd71f34c727fab306df98a3",
+                "reference": "caccd90608f4d9deedd71f34c727fab306df98a3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Irsyadulibad\\NIKValidator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ahmad Irsyadul Ibad",
+                    "email": "ahmadirsyadulibad7@gmail.com",
+                    "homepage": "http://irsyadulibad.my.id",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Indonesian citizenship identification number validator",
+            "keywords": [
+                "NIK Validator",
+                "nik",
+                "validator"
+            ],
+            "support": {
+                "issues": "https://github.com/irsyadulibad/nik-validator/issues",
+                "source": "https://github.com/irsyadulibad/nik-validator/tree/2.0.0"
+            },
+            "time": "2024-01-08T14:48:36+00:00"
         },
         {
             "name": "laravel/framework",
