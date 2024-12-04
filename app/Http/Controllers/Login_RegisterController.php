@@ -43,9 +43,18 @@ class Login_RegisterController extends Controller
 
     // }
 
+    public function show_landing()
+    {
+        return view('login_register.landing');
+    }
+
     public function show_login()
     {
         return view('login_register.login');
+    }
+    public function show_register()
+    {
+        return view('login_register.register');
     }
 
     public function loginakun(Request $request)
@@ -66,11 +75,68 @@ class Login_RegisterController extends Controller
             if (Auth::user()->role == 'admin') {
 
                 return redirect()->intended('admin/dashboard')->with(Session::flash('success_message', true));
+            } else if (Auth::user()->role == 'user') {
+                return redirect()->intended('user/dashboard')->with(Session::flash('success_message', true));
             }
         } else {
             return redirect()->back()->with('error')->with(Session::flash('gagal_login', true));
             // Autentikasi gagal
             // Lakukan sesuatu
+        }
+    }
+
+    public function register(Request $request)
+    {
+        // Validasi input
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required', // Konfirmasi password
+        ]);
+
+        // Membuat data user
+        $user = User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')), // Enkripsi password
+            'role' => 'user', // Set role sebagai 'user' secara default
+        ]);
+
+        // Autentikasi otomatis setelah registrasi berhasil
+        Auth::login($user);
+
+        // Redirect ke halaman user
+        return redirect()->intended('user/dashboard')->with(Session::flash('success_message', true));
+    }
+
+    public function login(Request $request)
+    {
+
+        $request->validate([
+            'email' => 'required|email:dns',
+            'password' => 'required'
+        ]);
+
+        $credentials = $request->only('email', 'password'); // Hanya ambil email dan password
+
+        if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')], true)) {
+
+            // Jika ingin mengecek peran pengguna
+            if (Auth::user()->role == 'apoteker') {
+
+                return redirect()->intended('/apoteker/dashboard');
+                // Lakukan sesuatu
+            } elseif (Auth::user()->role == 'admin_kasir') {
+                return redirect()->intended('/admin/dashboard')->with(Session::flash('success_message', true));
+            } elseif (Auth::user()->role == 'pemilik') {
+                return redirect()->intended('/admin_kepala/dashboard')->with(Session::flash('berhasil_login', true));
+            } elseif (Auth::user()->role == 'user') {
+                return redirect()->intended('/user/transaksi_baru')->with(Session::flash('berhasil_login', true));
+            }
+        } else {
+            return redirect()->back()->with('error')->with(Session::flash('gagal_login', true));
+            // Autentikasi gagal
+            // Lakukan sesuatu, misalnya kembali ke halaman login dengan pesan error
         }
     }
 

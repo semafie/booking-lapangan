@@ -5,6 +5,7 @@
       <meta charset="utf-8">
       <title>Login Form Design | CodeLab</title>
       <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+      <link rel="stylesheet" href="{{ asset('js/login1.js') }}">
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
       
@@ -14,39 +15,42 @@
   
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.all.min.js"></script>
       <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.min.css" rel="stylesheet">
+      <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
    </head>
    <body>
-      <div class="wrapper">
-         <div class="title">
-            Login Form
+      <section class="container forms">
+         <div class="form login">
+           <div class="form-content">
+             <header>Login</header>
+             <form action="{{ route('loginakun') }}" method="POST">
+               @csrf
+               <div class="field input-field">
+                 <input type="email" name="email" placeholder="Email" class="input">
+               </div>
+               <div class="field input-field">
+                 <input type="password" name="password" placeholder="Password" class="password">
+                 <i class='bx bx-hide eye-icon'></i>
+               </div>
+               <div class="form-link">
+                 <a href="#" class="forgot-pass">Forgot password?</a>
+               </div>
+               <div class="field button-field">
+                 <button type="submit">Login</button>
+               </div>
+             </form>
+             <div class="form-link">
+               <span>Don't have an account? <a href="/register" class="link signup-link">Signup</a></span>
+             </div>
+           </div>
+           <div class="line"></div>
+           
+           <div class="media-options">
+             <a href="auth/redirect" class="field google">
+               <img src="images/google.png" alt="" class="google-img">
+               <span>Login with Google</span>
+             </a>
+           </div>
          </div>
-         <form action="{{ route('loginakun') }}" method="POST">
-            @csrf
-            <div class="field">
-               <input type="text" name="email" required>
-               <label>Email Address</label>
-            </div>
-            <div class="field">
-               <input type="password" name="password" required>
-               <label>Password</label>
-            </div>
-            <div class="content">
-               <div class="checkbox">
-                  <input type="checkbox" id="remember-me">
-                  <label for="remember-me">Remember me</label>
-               </div>
-               <div class="pass-link">
-                  <a href="#">Forgot password?</a>
-               </div>
-            </div>
-            <div class="field">
-               <input type="submit" value="Login">
-            </div>
-            <div class="signup-link">
-               Not a member? <a href="#">Signup now</a>
-            </div>
-         </form>
-      </div>
 
       <script>
         @if(Session::has('login_dulu'))

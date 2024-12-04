@@ -74,6 +74,12 @@
         </a>
       </li>
       
+      <li class="menu-item @active('pelanggan') ">
+        <a href="{{ route('pelanggan') }}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-book-heart"></i>
+          <div data-i18n="Layouts">Data Pelanggan</div>
+        </a>
+      </li>
       
       <li class="menu-item  @active('transaksi')">
         <a href="{{ route('transaksi') }}" class="menu-link">
@@ -81,14 +87,14 @@
           <div data-i18n="Layouts">Transaksi</div>
         </a>
       </li>
-      <li class="menu-item  ">
-        <a href="" class="menu-link">
+      <li class="menu-item  @active('laporan')">
+        <a href="{{ route('laporan') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-book-heart"></i>
           <div data-i18n="Layouts">Laporan</div>
         </a>
       </li>
-      <li class="menu-item  ">
-        <a href="" class="menu-link">
+      <li class="menu-item  @active('ulasan')">
+        <a href="{{ route('ulasan') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-book-heart"></i>
           <div data-i18n="Layouts">Ulasan</div>
         </a>

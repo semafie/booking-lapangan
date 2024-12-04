@@ -15,6 +15,27 @@ class adminController extends Controller
         ]);
     }
 
+    public function show_pelanggan()
+    {
+        return view('admin.pages.pelanggan.pelanggan', [
+            'title' => 'Pelanggan',
+        ]);
+    }
+
+    public function show_ulasan()
+    {
+        return view('admin.pages.ulasan.ulasan', [
+            'title' => 'Ulasan',
+        ]);
+    }
+
+    public function show_laporan()
+    {
+        return view('admin.pages.laporan.laporan', [
+            'title' => 'Laporan',
+        ]);
+    }
+
     public function show_lapangan()
     {
         $lapangan = lapanganModel::all();
@@ -37,8 +58,10 @@ class adminController extends Controller
 
     public function show_transaksi()
     {
+        $jadwal = jadwalModel::with('lapangan')->where('status', 'tersedia')->get();
         return view('admin.pages.transaksi.transaksi', [
             'title' => 'Transaksi',
+            'jadwal' => $jadwal,
         ]);
     }
 }

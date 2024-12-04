@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('pembayaran', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_user');
+            $table->bigInteger('id_user')->nullable();
+            $table->string('nama')->nullable();
             $table->enum('metode', ['manual', 'online']);
             $table->enum('status', ['dibayar', 'menunggu_dibayar', 'menunggu_konfirmasi', 'gagal']);
-            $table->string('bukti_pembayaran');
+            $table->string('bukti_pembayaran')->nullable();
             $table->date('tanggal');
-            $table->date('total_harga');
+            $table->integer('total_harga');
             $table->timestamps();
         });
     }
