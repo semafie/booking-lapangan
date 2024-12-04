@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\galleryModel;
 use App\Models\jadwalModel;
 use App\Models\lapanganModel;
 use Illuminate\Http\Request;
@@ -33,6 +34,15 @@ class adminController extends Controller
     {
         return view('admin.pages.laporan.laporan', [
             'title' => 'Laporan',
+        ]);
+    }
+
+    public function show_gallery()
+    {
+        $gallery = galleryModel::all();
+        return view('admin.pages.gallery.gallery', [
+            'title' => 'Gallery',
+            'gallery' => $gallery,
         ]);
     }
 

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Mail\KirimEmail;
+use App\Models\galleryModel;
 use App\Models\Kamar;
+use App\Models\lapanganModel;
 use App\Models\Penghuni;
+use App\Models\ulasanModel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -45,7 +48,14 @@ class Login_RegisterController extends Controller
 
     public function show_landing()
     {
-        return view('login_register.landing');
+        $ulasan = ulasanModel::all();
+        $lapangan = lapanganModel::all();
+        $gallery = galleryModel::all();
+        return view('login_register.landing', [
+            'gallery' => $gallery,
+            'lapangan' => $lapangan,
+            'ulasan' => $ulasan,
+        ]);
     }
 
     public function show_login()

@@ -93,6 +93,12 @@
           <div data-i18n="Layouts">Laporan</div>
         </a>
       </li>
+      <li class="menu-item  @active('gallery')">
+        <a href="{{ route('gallery') }}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-book-heart"></i>
+          <div data-i18n="Layouts">Gallery</div>
+        </a>
+      </li>
       <li class="menu-item  @active('ulasan')">
         <a href="{{ route('ulasan') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-book-heart"></i>

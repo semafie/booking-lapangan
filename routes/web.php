@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\galleryController;
 use App\Http\Controllers\jadwalController;
 use App\Http\Controllers\lapanganController;
 use App\Http\Controllers\Login_RegisterController;
@@ -23,6 +24,14 @@ Route::prefix('admin')->middleware("admin")->group(function () {
     Route::get('/pelanggan', [adminController::class, 'show_pelanggan'])->name('pelanggan');
     Route::get('/ulasan', [adminController::class, 'show_ulasan'])->name('ulasan');
     Route::get('/laporan', [adminController::class, 'show_laporan'])->name('laporan');
+    Route::get('/gallery', [adminController::class, 'show_gallery'])->name('gallery');
+
+    Route::prefix('gallery')->group(function () {
+        Route::get('/', [adminController::class, 'show_gallery'])->name('gallery');
+        Route::post('/tambah', [galleryController::class, 'tambah'])->name('tambah_gallery');
+        Route::put('/{id}/edit', [galleryController::class, 'edit'])->name('edit_gallery');
+        Route::delete('/{id}/delete', [galleryController::class, 'delete'])->name('delete_gallery');
+    });
     Route::prefix('lapangan')->group(function () {
         Route::get('/', [adminController::class, 'show_lapangan'])->name('lapangan');
         Route::post('/tambah', [lapanganController::class, 'tambah'])->name('tambah_lapangan');
@@ -46,6 +55,8 @@ Route::prefix('admin')->middleware("admin")->group(function () {
 
 Route::prefix('user')->middleware('user')->group(function () {
     Route::get('/dashboard', [userController::class, 'show_dashboard'])->name('dashboard_user');
+    Route::get('/transaksi', [userController::class, 'show_transaksi'])->name('transaksi_user');
+    Route::get('/ulasan', [userController::class, 'show_ulasan'])->name('ulasan_user');
 });
 Route::get('/auth/google/callback', [SocialliteController::class, 'callback'])->name('redirect');
 Route::get('/auth/redirect', [SocialliteController::class, 'redirect'])->name('redirect');

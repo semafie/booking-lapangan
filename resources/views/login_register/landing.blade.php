@@ -616,8 +616,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>TESTIMONIALS</h2>
-        <p>What Are They <span class="description-title">Saying About Us</span></p>
+        <h2>TESTIMONI</h2>
+        <p>Apa yang Mereka <span class="description-title">Katakan Tentang Kami</span></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -640,6 +640,8 @@
           </script>
           <div class="swiper-wrapper">
 
+            @if($ulasan && $ulasan->count() > 0)
+            @foreach ($ulasan as $item)
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="row gy-4 justify-content-center">
@@ -663,8 +665,13 @@
                 </div>
               </div>
             </div><!-- End testimonial item -->
+            @endforeach
+            @else
+                <h1 >Ulasan tidak ditemukan</h1>
+            @endif
+            
 
-            <div class="swiper-slide">
+            {{-- <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="row gy-4 justify-content-center">
                   <div class="col-lg-6">
@@ -734,7 +741,7 @@
                   </div>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div><!-- End testimonial item --> --}}
 
           </div>
           <div class="swiper-pagination"></div>
@@ -776,40 +783,20 @@
             }
           </script>
           <div class="swiper-wrapper">
-
-            <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url(assets_landing/img/events-1.jpg)">
-              <h3>Custom Parties</h3>
-              <div class="price align-self-start">$99</div>
-              <p class="description">
-                Quo corporis voluptas ea ad. Consectetur inventore sapiente ipsum voluptas eos omnis facere. Enim facilis veritatis id est rem repudiandae nulla expedita quas.
-              </p>
-            </div><!-- End Event item -->
-
-            <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url(assets_landing/img/events-2.jpg)">
-              <h3>Private Parties</h3>
-              <div class="price align-self-start">$289</div>
-              <p class="description">
-                In delectus sint qui et enim. Et ab repudiandae inventore quaerat doloribus. Facere nemo vero est ut dolores ea assumenda et. Delectus saepe accusamus aspernatur.
-              </p>
-            </div><!-- End Event item -->
-
-            <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url(assets_landing/img/events-3.jpg)">
-              <h3>Birthday Parties</h3>
-              <div class="price align-self-start">$499</div>
-              <p class="description">
-                Laborum aperiam atque omnis minus omnis est qui assumenda quos. Quis id sit quibusdam. Esse quisquam ducimus officia ipsum ut quibusdam maxime. Non enim perspiciatis.
-              </p>
-            </div><!-- End Event item -->
-
-            <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url(assets_landing/img/events-4.jpg)">
-              <h3>Wedding Parties</h3>
-              <div class="price align-self-start">$899</div>
-              <p class="description">
-                Laborum aperiam atque omnis minus omnis est qui assumenda quos. Quis id sit quibusdam. Esse quisquam ducimus officia ipsum ut quibusdam maxime. Non enim perspiciatis.
-              </p>
-            </div><!-- End Event item -->
-
-          </div>
+            @if($lapangan && $lapangan->count() > 0)
+                @foreach ($lapangan as $item)
+                    <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url({{ $item->gambar }})">
+                        <h3>{{ $item->nama }}</h3>
+                        <div class="price align-self-start">Rp. {{ $item->harga_per_jam }}</div>
+                        <p class="description">
+                            {{ $item->deskripsi }}
+                        </p>
+                    </div>
+                @endforeach
+            @else
+                <h1 >Lapangan tidak ditemukan</h1>
+            @endif
+        </div>
           <div class="swiper-pagination"></div>
         </div>
 
@@ -956,7 +943,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Gallery</h2>
-        <p><span>Check</span> <span class="description-title">Our Gallery</span></p>
+        <p><span>Coba Cek</span> <span class="description-title">Gallery Kami</span></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -993,15 +980,11 @@
             }
           </script>
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets_landing/img/gallery/gallery-1.jpg"><img src="assets_landing/img/gallery/gallery-1.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets_landing/img/gallery/gallery-2.jpg"><img src="assets_landing/img/gallery/gallery-2.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets_landing/img/gallery/gallery-3.jpg"><img src="assets_landing/img/gallery/gallery-3.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets_landing/img/gallery/gallery-4.jpg"><img src="assets_landing/img/gallery/gallery-4.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets_landing/img/gallery/gallery-5.jpg"><img src="assets_landing/img/gallery/gallery-5.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets_landing/img/gallery/gallery-6.jpg"><img src="assets_landing/img/gallery/gallery-6.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets_landing/img/gallery/gallery-7.jpg"><img src="assets_landing/img/gallery/gallery-7.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets_landing/img/gallery/gallery-8.jpg"><img src="assets_landing/img/gallery/gallery-8.jpg" class="img-fluid" alt=""></a></div>
-          </div>
+            @foreach ($gallery as $item)
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="{{ $item->gambar }}"><img src="{{ $item->gambar }}" class="img-fluid" alt=""></a></div>
+
+            @endforeach
+                                 </div>
           <div class="swiper-pagination"></div>
         </div>
 
@@ -1014,8 +997,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p><span>Need Help?</span> <span class="description-title">Contact Us</span></p>
+        <h2>Kontak</h2>
+        <p><span>Butuh Info</span> <span class="description-title">Lokasi?</span></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">

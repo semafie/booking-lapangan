@@ -26,6 +26,7 @@ class SocialliteController extends Controller
 
         $registerUser = User::where('google_id', $socialuser->id)->first();
 
+
         if (!$registerUser) {
             $user = User::updateOrCreate([
                 'google_id' => $socialuser->id,
@@ -40,7 +41,7 @@ class SocialliteController extends Controller
 
             Auth::login($user);
 
-            return redirect()->route('dashboard_user');
+            return redirect()->route('dashboard_user')->with(Session::flash('berhasil_login', true));
         }
 
 

@@ -12,4 +12,18 @@ class userController extends Controller
             'title' => 'Dashboard User',
         ]);
     }
+
+    public function show_transaksi()
+    {
+        return view('user.pages.booking.booking', [
+            'title' => 'Booking',
+        ]);
+    }
+
+    public function show_ulasan()
+    {
+        return view('user.pages.ulasan.ulasan', [
+            'title' => 'Ulasan',
+        ]);
+    }
 }
