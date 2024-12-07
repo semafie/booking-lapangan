@@ -93,15 +93,15 @@
       <div class="container">
         <div class="row gy-4 justify-content-center justify-content-lg-between">
           <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
-            <h1 data-aos="fade-up">Pesan Lapangan Futsal<br>Favoritmu Sekarang Juga!</h1>
-            <p data-aos="fade-up" data-aos-delay="100">Nikmati pengalaman bermain futsal dengan mudah dan cepat. Pilih jadwal sesuai keinginan!</p>
+            <h1 data-aos="fade-up">Pesan Lapangan Basket<br>Favoritmu Sekarang Juga!</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Nikmati pengalaman bermain basket dengan mudah dan cepat. Pilih jadwal sesuai keinginan!</p>
             <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
               <a href="#book-a-table" class="btn-get-started">Booking Sekarang</a>
               {{-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> --}}
             </div>
           </div>
           <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-            <img src="images/llanding.png" class="img-fluid animated" alt="">
+            <img src="images/model2.jpg" style="width: 310px" class="img-fluid animated" alt="">
           </div>
         </div>
       </div>
@@ -130,15 +130,15 @@
           <div class="col-lg-5" data-aos="fade-up" data-aos-delay="250">
             <div class="content ps-0 ps-lg-5">
               <p class="fst-italic">
-                Nikmati pengalaman bermain futsal yang menyenangkan dan mudah. Pilih jadwal lapangan futsal favoritmu dan lakukan booking sekarang!
+                Nikmati pengalaman bermain basket yang menyenangkan dan mudah. Pilih jadwal lapangan basket favoritmu dan lakukan booking sekarang!
               </p>
               <ul>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Booking lapangan futsal dengan cepat dan mudah kapan saja.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i> <span>Booking lapangan basket dengan cepat dan mudah kapan saja.</span></li>
                 <li><i class="bi bi-check-circle-fill"></i> <span>Jadwal fleksibel sesuai dengan kebutuhanmu, pilih yang terbaik!</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Proses pemesanan yang mudah dan aman, jaminan kenyamanan bermain futsal.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i> <span>Proses pemesanan yang mudah dan aman, jaminan kenyamanan bermain basket.</span></li>
               </ul>
               <p>
-                Segera lakukan pemesanan untuk mendapatkan tempat di lapangan futsal favoritmu. Nikmati bermain dengan teman-teman tanpa khawatir kehabisan jadwal.
+                Segera lakukan pemesanan untuk mendapatkan tempat di lapangan basket favoritmu. Nikmati bermain dengan teman-teman tanpa khawatir kehabisan jadwal.
               </p>
               
 
