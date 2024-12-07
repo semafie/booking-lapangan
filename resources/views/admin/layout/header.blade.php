@@ -60,6 +60,7 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ asset('assets/js/config.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/dashboard_admin.css') }}" />
+    <link rel="icon" href="images/llanding.png" type="image/x-icon">
 </head>
 
 <body>

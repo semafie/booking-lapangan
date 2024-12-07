@@ -4,12 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Yummy Bootstrap Template</title>
+  <title>Booking | Home</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
   {{-- <link href="assets_landing/img/favicon.png" rel="icon"> --}}
+  <link rel="icon" href="images/llanding.png" type="image/x-icon">
   <link href="assets_landing/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
