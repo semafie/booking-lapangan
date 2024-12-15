@@ -54,7 +54,7 @@
                 </div>
             </div>
 
-            <div class="line"></div>
+            {{-- <div class="line"></div> --}}
 
             {{-- <div class="media-options">
                 <a href="#" class="field facebook">
@@ -63,12 +63,12 @@
                 </a>
             </div> --}}
 
-            <div class="media-options">
+            {{-- <div class="media-options">
                 <a href="auth/redirect" class="field google">
                     <img src="images/google.png" alt="" class="google-img">
                     <span>Login with Google</span>
                 </a>
-            </div>
+            </div> --}}
 
         </div>
     </section>

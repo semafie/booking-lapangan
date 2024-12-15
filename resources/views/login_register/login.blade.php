@@ -43,14 +43,14 @@
                <span>Don't have an account? <a href="/register" class="link signup-link">Signup</a></span>
              </div>
            </div>
-           <div class="line"></div>
+           {{-- <div class="line"></div>
            
            <div class="media-options">
              <a href="auth/redirect" class="field google">
                <img src="images/google.png" alt="" class="google-img">
                <span>Login with Google</span>
              </a>
-           </div>
+           </div> --}}
          </div>
 
       <script>
