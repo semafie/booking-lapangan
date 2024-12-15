@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ulasanModel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,9 +30,11 @@ class userController extends Controller
     public function show_ulasan()
     {
         $user = User::find(Auth::user()->id);
+        $ulasan = ulasanModel::where('id_user', $user->id)->get();
         return view('user.pages.ulasan.ulasan', [
             'title' => 'Ulasan',
-            'user' => $user
+            'user' => $user,
+            'ulasan' => $ulasan,
         ]);
     }
 }

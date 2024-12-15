@@ -7,6 +7,7 @@ use App\Http\Controllers\lapanganController;
 use App\Http\Controllers\Login_RegisterController;
 use App\Http\Controllers\SocialliteController;
 use App\Http\Controllers\transaksiController;
+use App\Http\Controllers\ulasanController;
 use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
@@ -59,7 +60,13 @@ Route::prefix('admin')->middleware("admin")->group(function () {
 Route::prefix('user')->middleware('user')->group(function () {
     Route::get('/dashboard', [userController::class, 'show_dashboard'])->name('dashboard_user');
     Route::get('/transaksi', [userController::class, 'show_transaksi'])->name('transaksi_user');
-    Route::get('/ulasan', [userController::class, 'show_ulasan'])->name('ulasan_user');
+
+    Route::prefix('ulasan')->group(function () {
+        Route::get('/', [userController::class, 'show_ulasan'])->name('ulasan_user');
+        Route::post('/tambah', [ulasanController::class, 'tambah'])->name('tambah_ulasan_user');
+        Route::put('{id}/edit', [ulasanController::class, 'edit'])->name('edit_ulasan_user');
+        Route::delete('/{id}/delete', [ulasanController::class, 'delete'])->name('delete_ulasan_user');
+    });
 });
 Route::get('/auth/google/callback', [SocialliteController::class, 'callback'])->name('redirect');
 Route::get('/auth/redirect', [SocialliteController::class, 'redirect'])->name('redirect');

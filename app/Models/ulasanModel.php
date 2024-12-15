@@ -9,7 +9,7 @@ class ulasanModel extends Model
     protected $table = 'ulasan';
 
     protected $fillable = [
-        'user_id',
+        'id_user',
         'komentar',
         'rating',
 

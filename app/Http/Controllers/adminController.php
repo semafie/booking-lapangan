@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\galleryModel;
 use App\Models\jadwalModel;
 use App\Models\lapanganModel;
+use App\Models\ulasanModel;
 use Illuminate\Http\Request;
 
 class adminController extends Controller
@@ -25,8 +26,10 @@ class adminController extends Controller
 
     public function show_ulasan()
     {
+        $ulasan = ulasanModel::all();
         return view('admin.pages.ulasan.ulasan', [
             'title' => 'Ulasan',
+            'ulasan' => $ulasan,
         ]);
     }
 
