@@ -1005,7 +1005,7 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="mb-5">
-          <iframe style="width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63219.15529215085!2d112.5904974507198!3d-7.978558303458566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd62822063dc2fb%3A0x78879446481a4da2!2sMalang%2C%20Malang%20City%2C%20East%20Java!5e0!3m2!1sen!2sid!4v1733344494611!5m2!1sen!2sid" frameborder="0" allowfullscreen=""></iframe>
+          <iframe style="width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.4723376846514!2d113.71479761108263!3d-8.155073381661891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6959c4d8e1183%3A0x98a9f86873349204!2sKIM%20SHOES%20STORE!5e0!3m2!1sen!2sid!4v1734268260330!5m2!1sen!2sid" frameborder="0" allowfullscreen=""></iframe>
         </div><!-- End Google Maps -->
 
         {{-- <div class="row gy-4">

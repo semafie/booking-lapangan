@@ -59,7 +59,13 @@ Route::prefix('admin')->middleware("admin")->group(function () {
 
 Route::prefix('user')->middleware('user')->group(function () {
     Route::get('/dashboard', [userController::class, 'show_dashboard'])->name('dashboard_user');
-    Route::get('/transaksi', [userController::class, 'show_transaksi'])->name('transaksi_user');
+
+    Route::prefix('transaksi')->group(function () {
+        Route::get('/', [userController::class, 'show_transaksi'])->name('transaksi_user');
+        Route::post('/tambah', [transaksiController::class, 'tambah_u'])->name('tambahu_transaksi');
+        Route::put('/{id}/edit', [transaksiController::class, 'edit_u'])->name('editu_transaksi');
+        Route::delete('/{id}/delete', [transaksiController::class, 'hapus_u'])->name('deleteu_transaksi');
+    });
 
     Route::prefix('ulasan')->group(function () {
         Route::get('/', [userController::class, 'show_ulasan'])->name('ulasan_user');

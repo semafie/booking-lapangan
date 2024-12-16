@@ -86,7 +86,7 @@ class Login_RegisterController extends Controller
 
                 return redirect()->intended('admin/dashboard')->with(Session::flash('success_message', true));
             } else if (Auth::user()->role == 'user') {
-                return redirect()->intended('user/dashboard')->with(Session::flash('success_message', true));
+                return redirect()->intended('user/transaksi')->with(Session::flash('success_message', true));
             }
         } else {
             return redirect()->back()->with('error')->with(Session::flash('gagal_login', true));
