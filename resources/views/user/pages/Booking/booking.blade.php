@@ -35,10 +35,10 @@
                     
                     <div id="id_user_section" style="display: none;">
                         <label for="defaultFormControlInput" class="form-label">ID User</label>
-                        <div class="d-flex gap-3">
-                            <input type="text" class="form-control mb-2" readonly style="width: 75%;" id="defaultFormControlInput" placeholder="ID User" name="id_user" aria-describedby="defaultFormControlHelp" />
+                        <input type="text" class="form-control mb-2" readonly style="width: 75%;" id="defaultFormControlInput" placeholder="ID User" value="{{ $USER->id }}" name="id_user" aria-describedby="defaultFormControlHelp" />
+                        {{-- <div class="d-flex gap-3">
                             <button type="button" class="btn btn-primary" style="width: 25%;">Cari User</button>
-                        </div>
+                        </div> --}}
                     </div>
                     
                     <div id="nama_section" style="display: none;">
@@ -64,7 +64,7 @@
                     <input type="text" class="form-control mb-2" value="0" name="total_harga" id="total_harga" placeholder="Total Harga" aria-describedby="defaultFormControlHelp" readonly />
 
                     <button href="" class="btn btn-primary my-3"
-        style="display: inline-block; width: auto; max-width: fit-content;" data-bs-toggle="modal" data-bs-target="#tambahlapangan" >
+        style="display: inline-block; width: auto; max-width: fit-content;" data-bs-toggle="modal" data-bs-target="#tambahlapangan" id="pay-button" >
         Tambah Data Transaksi
                     </button>
 </form>
@@ -183,6 +183,26 @@
     </div>
 </div>
 
+
+<script type="text/javascript">
+    document.getElementById('pay-button').onclick = function(){
+      // SnapToken acquired from previous step
+      snap.pay('{{ $transaction->snap_token }}', {
+        // Optional
+        onSuccess: function(result){
+          /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+        },
+        // Optional
+        onPending: function(result){
+          /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+        },
+        // Optional
+        onError: function(result){
+          /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+        }
+      });
+    };
+  </script>
 
 
 <script>

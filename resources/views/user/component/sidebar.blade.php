@@ -57,14 +57,14 @@
 
     <ul class="menu-inner py-1">
       <!-- Dashboards -->
-      <li class="menu-item @active('dashboard_user')">
+      {{-- <li class="menu-item @active('dashboard_user')">
         <a href="{{ route('dashboard_user') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-home-circle"></i>
           <div data-i18n="Dashboards">Dashboards</div>
           
         </a>
         
-      </li>
+      </li> --}}
 
       <li class="menu-item  @active('transaksi_user')">
         <a href="{{ route('transaksi_user') }}" class="menu-link">

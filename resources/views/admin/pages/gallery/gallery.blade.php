@@ -25,7 +25,7 @@
                             <td><div class="d-flex gap-3">
                                 <button type="submit" class="btn btn-warning" data-bs-toggle="modal"
                                 data-bs-target="#editgallery{{ $item->id }}">Edit</button>
-                            <form action="{{ route('delete_gallery', $item->id) }}" method="POST">
+                            <form action="{{ route('delete_gallery', $item->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('delete')
                                 {{-- <input class="form-control" type="hidden" name="id_lapangan" value="{{ $id_lapangan }}" id="html5-time-input" /> --}}

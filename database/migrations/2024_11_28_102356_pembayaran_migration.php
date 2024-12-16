@@ -16,7 +16,8 @@ return new class extends Migration
             $table->bigInteger('id_user')->nullable();
             $table->string('nama')->nullable();
             $table->enum('metode', ['manual', 'online']);
-            $table->enum('status', ['dibayar', 'menunggu_dibayar', 'menunggu_konfirmasi', 'gagal']);
+            $table->string('status');
+            $table->string('snap_token');
             $table->string('bukti_pembayaran')->nullable();
             $table->date('tanggal');
             $table->integer('total_harga');

@@ -61,6 +61,7 @@
     <script src="{{ asset('assets/js/config.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/dashboard_admin.css') }}" />
     <link rel="icon" href="images/llanding.png" type="image/x-icon">
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-server-5ukGL1CMwEikmEYHbvOjjPnV"></script>
 </head>
 
 <body>
