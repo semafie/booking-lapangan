@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\jadwalModel;
 use App\Models\ulasanModel;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -20,10 +21,12 @@ class userController extends Controller
 
     public function show_transaksi()
     {
+        $jadwal = jadwalModel::with('lapangan')->where('status', 'tersedia')->get();
         $user = User::find(Auth::user()->id);
         return view('user.pages.booking.booking', [
             'title' => 'Booking',
             'user' => $user,
+            'jadwal' => $jadwal,
         ]);
     }
 
