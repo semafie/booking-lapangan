@@ -26,8 +26,28 @@ class jadwalController extends Controller
             return redirect()->route('jadwal', $request->id_lapangan)->with(Session::flash('kosong_tambah', true));
         }
 
+        // Cek apakah jam_mulai lebih kecil dari jam_selesai
+        if (strtotime($request->jam_mulai) >= strtotime($request->jam_selesai)) {
+            return redirect()->route('jadwal', $request->id_lapangan)
+                ->with(Session::flash('error_jam', 'Jam mulai harus lebih kecil dari jam selesai'));
+        }
 
+        // Cek overlap dengan jadwal yang sudah ada
+        $overlap = jadwalModel::where('id_lapangan', $request->id_lapangan)
+            ->where(function($query) use ($request) {
+                $query->whereBetween('jam_mulai', [$request->jam_mulai, $request->jam_selesai])
+                    ->orWhereBetween('jam_selesai', [$request->jam_mulai, $request->jam_selesai])
+                    ->orWhere(function($q) use ($request) {
+                        $q->where('jam_mulai', '<=', $request->jam_mulai)
+                          ->where('jam_selesai', '>=', $request->jam_selesai);
+                    });
+            })
+            ->exists();
 
+        if ($overlap) {
+            return redirect()->route('jadwal', $request->id_lapangan)
+                ->with(Session::flash('error_jam', 'Jadwal ini overlap dengan jadwal yang sudah ada'));
+        }
 
         $jadwal = jadwalModel::create([
             'jam_mulai' => $request->jam_mulai,
@@ -59,6 +79,30 @@ class jadwalController extends Controller
     {
 
         $jadwal = jadwalModel::findOrFail($id);
+
+        // Cek apakah jam_mulai lebih kecil dari jam_selesai
+        if (strtotime($request->jam_mulai) >= strtotime($request->jam_selesai)) {
+            return redirect()->route('jadwal', $request->id_lapangan)
+                ->with(Session::flash('error_jam', 'Jam mulai harus lebih kecil dari jam selesai'));
+        }
+
+        // Cek overlap dengan jadwal lain (kecuali jadwal yang sedang diedit)
+        $overlap = jadwalModel::where('id_lapangan', $request->id_lapangan)
+            ->where('id', '!=', $id)
+            ->where(function($query) use ($request) {
+                $query->whereBetween('jam_mulai', [$request->jam_mulai, $request->jam_selesai])
+                    ->orWhereBetween('jam_selesai', [$request->jam_mulai, $request->jam_selesai])
+                    ->orWhere(function($q) use ($request) {
+                        $q->where('jam_mulai', '<=', $request->jam_mulai)
+                          ->where('jam_selesai', '>=', $request->jam_selesai);
+                    });
+            })
+            ->exists();
+
+        if ($overlap) {
+            return redirect()->route('jadwal', $request->id_lapangan)
+                ->with(Session::flash('error_jam', 'Jadwal ini overlap dengan jadwal yang sudah ada'));
+        }
 
         $jadwal->jam_mulai = $request->input('jam_mulai');
         $jadwal->jam_selesai = $request->input('jam_selesai');

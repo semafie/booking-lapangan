@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->enum('metode', ['manual', 'online']);
             $table->string('status');
-            $table->string('snap_token');
+            $table->string('snap_token')->nullable();
             $table->string('bukti_pembayaran')->nullable();
             $table->date('tanggal');
             $table->integer('total_harga');

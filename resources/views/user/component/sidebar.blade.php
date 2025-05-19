@@ -72,12 +72,12 @@
           <div data-i18n="Layouts">Booking</div>
         </a>
       </li>
-      <li class="menu-item  @active('ulasan_user')">
+      {{-- <li class="menu-item  @active('ulasan_user')">
         <a href="{{ route('ulasan_user') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-book-heart"></i>
           <div data-i18n="Layouts">Ulasan</div>
         </a>
-      </li>
+      </li> --}}
 
       <!-- Layouts -->
       

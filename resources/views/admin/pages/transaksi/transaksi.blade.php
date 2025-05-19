@@ -25,9 +25,9 @@
 
                     <form action="{{ route('tambah_transaksi') }}" method="POST">
                         @csrf
-                    <input type="text" id="selectedData" name="selectedData" />
+                    <input type="text" id="selectedData" name="selectedData" hidden/>
         
-                    <label for="defaultFormControlInput" class="form-label">Metode</label>
+                    <label for="defaultFormControlInput" class="form-label" hidden>Metode</label>
                     <select class="form-select mb-2" name="tipe" id="select_metode" aria-label="Default select example">
                         <option value="terdaftar">Terdaftar</option>
                         <option value="tidak_terdaftar">Tidak Terdaftar</option>

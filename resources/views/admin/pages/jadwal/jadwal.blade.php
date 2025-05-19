@@ -104,49 +104,47 @@
 
 <script>
     @if(Session::has('berhasil_tambah'))
-  
     Swal.fire({
-      title: 'Berhasil',
-      text: 'Data Berhasil ditambahkan',
-      icon: 'success',
-      confirmButtonText: 'Oke'
+        title: 'Berhasil',
+        text: 'Data Berhasil ditambahkan',
+        icon: 'success',
+        confirmButtonText: 'Oke'
     })
-  
     @elseif(Session::has('gagal_tambah'))
     Swal.fire({
-      title: 'Gagal',
-      text: 'Data gagal di tambahkan',
-      icon: 'error',
-      confirmButtonText: 'Oke'
+        title: 'Gagal',
+        text: 'Data gagal di tambahkan',
+        icon: 'error',
+        confirmButtonText: 'Oke'
     })
-  
     @elseif(Session::has('berhasil_edit'))
-  
     Swal.fire({
-      title: 'Berhasil',
-      text: 'Data Berhasil di edit',
-      icon: 'success',
-      confirmButtonText: 'Oke'
+        title: 'Berhasil',
+        text: 'Data Berhasil di edit',
+        icon: 'success',
+        confirmButtonText: 'Oke'
     })
-  
     @elseif(Session::has('berhasil_hapus'))
-  
     Swal.fire({
-      title: 'Berhasil',
-      text: 'Data Berhasil dihapus',
-      icon: 'success',
-      confirmButtonText: 'Oke'
+        title: 'Berhasil',
+        text: 'Data Berhasil dihapus',
+        icon: 'success',
+        confirmButtonText: 'Oke'
     })
-  
     @elseif(Session::has('kosong_tambah'))
-  
     Swal.fire({
-      title: 'Gagal ',
-      text: 'Lengkapi data',
-      icon: 'error',
-      confirmButtonText: 'Oke'
+        title: 'Gagal',
+        text: 'Lengkapi data',
+        icon: 'error',
+        confirmButtonText: 'Oke'
+    })
+    @elseif(Session::has('error_jam'))
+    Swal.fire({
+        title: 'Gagal',
+        text: '{{ Session::get("error_jam") }}',
+        icon: 'error',
+        confirmButtonText: 'Oke'
     })
     @endif
-  
-     </script>
+</script>
 @endsection

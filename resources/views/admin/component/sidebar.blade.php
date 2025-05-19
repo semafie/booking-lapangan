@@ -74,8 +74,8 @@
         </a>
       </li>
       
-      <li class="menu-item @active('pelanggan') ">
-        <a href="{{ route('pelanggan') }}" class="menu-link">
+      <li class="menu-item @active('pelanggan.index') ">
+        <a href="{{ route('pelanggan.index') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-book-heart"></i>
           <div data-i18n="Layouts">Data Pelanggan</div>
         </a>

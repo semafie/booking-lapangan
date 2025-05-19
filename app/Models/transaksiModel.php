@@ -9,12 +9,16 @@ class transaksiModel extends Model
     protected $table = 'pembayaran';
 
     protected $fillable = [
-        'id_user',
-        'nama',
-        'metode',
-        'status',
-        'bukti_pembayaran',
+        'user_id',
         'tanggal',
         'total_harga',
+        'status',
+        'metode',
+        'snap_token'
+    ];
+
+    protected $casts = [
+        'tanggal' => 'date',
+        'total_harga' => 'integer'
     ];
 }
